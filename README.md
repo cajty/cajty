@@ -1,85 +1,118 @@
-<div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=40&pause=1000&color=0969DA&center=true&vCenter=true&width=600&height=100&lines=Hello%2C+I'm+Ayoub+Belyamane;Full+Stack+Developer" alt="Typing SVG" />
-</div>
+import React, { useState, useEffect } from 'react';
+import { GitHub, Linkedin, Mail, Phone, Book, Code, Database, Tools } from 'lucide-react';
 
-# 👨‍💻 Ayoub Belyamane | Full Stack Developer
+const DeveloperProfile = () => {
+  const [isVisible, setIsVisible] = useState({});
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setIsVisible(prev => ({...prev, [entry.target.id]: true}));
+        }
+      });
+    });
 
-[![GitHub followers](https://img.shields.io/github/followers/cajty?label=Follow&style=social)](https://github.com/cajty)
-[![LinkedIn](https://img.shields.io/badge/-Belyamane%20Ayoub-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/belyamane-ayoub/)](https://www.linkedin.com/in/belyamane-ayoub/)
-[![Email](https://img.shields.io/badge/-Email-red?style=flat-square&logo=Gmail&logoColor=white&link=mailto:Belyamaneayoub1@gmail.com)](mailto:Belyamaneayoub1@gmail.com)
-[![Phone](https://img.shields.io/badge/-Phone-green?style=flat-square&logo=WhatsApp&logoColor=white&link=tel:+212623455637)](tel:+212623455637)
+    document.querySelectorAll('section').forEach((section) => {
+      observer.observe(section);
+    });
 
-## 🚀 About Me
+    return () => observer.disconnect();
+  }, []);
 
-I'm a passionate Full Stack Developer based in Salé, Morocco, currently enhancing my skills in full stack development at YouCode | UM6P, Youssoufia. With a strong foundation in physical sciences and a drive for creating innovative solutions, I'm always eager to take on new challenges in the world of technology.
+  return (
+    <div className="max-w-4xl mx-auto p-8 bg-gradient-to-br from-gray-50 to-gray-100">
+      <header className="text-center mb-12">
+        <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-4">
+          Ayoub Belyamane
+        </h1>
+        <p className="text-xl text-gray-700 mb-6">Transforming Ideas into Digital Reality</p>
+        
+        <div className="flex justify-center space-x-4">
+          <SocialButton Icon={GitHub} href="https://github.com/cajty" />
+          <SocialButton Icon={Linkedin} href="https://www.linkedin.com/in/belyamane-ayoub" />
+          <SocialButton Icon={Mail} href="mailto:Belyamaneayoub1@gmail.com" />
+          <SocialButton Icon={Phone} href="tel:+212623455637" />
+        </div>
+      </header>
 
-## 🛠️ Technical Skills
+      <section id="about" className={`mb-12 transform transition-all duration-700 ${isVisible.about ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+        <div className="bg-white rounded-lg shadow-lg p-6">
+          <h2 className="text-2xl font-semibold mb-4 flex items-center">
+            <Code className="mr-2" /> Technical Expertise
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {['JavaScript', 'React', 'Angular', 'PHP', 'Laravel', 'Python'].map((skill) => (
+              <SkillBadge key={skill} name={skill} />
+            ))}
+          </div>
+        </div>
+      </section>
 
-<div align="center">
+      <section id="specializations" className={`mb-12 transform transition-all duration-700 ${isVisible.specializations ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+        <div className="bg-white rounded-lg shadow-lg p-6">
+          <h2 className="text-2xl font-semibold mb-4 flex items-center">
+            <Database className="mr-2" /> Specializations
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <SpecializationCard 
+              title="Full Stack Development"
+              description="Building scalable web applications with modern technologies"
+            />
+            <SpecializationCard 
+              title="UI/UX Design"
+              description="Creating intuitive and engaging user experiences"
+            />
+          </div>
+        </div>
+      </section>
 
-### Languages
-![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![PHP](https://img.shields.io/badge/-PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
-![Python](https://img.shields.io/badge/-Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Java](https://img.shields.io/badge/-Java-007396?style=for-the-badge&logo=java&logoColor=white)
+      <section id="languages" className={`mb-12 transform transition-all duration-700 ${isVisible.languages ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+        <div className="bg-white rounded-lg shadow-lg p-6">
+          <h2 className="text-2xl font-semibold mb-4 flex items-center">
+            <Book className="mr-2" /> Languages
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <LanguageCard language="Arabic" level="Native" flag="🇲🇦" />
+            <LanguageCard language="English" level="B1" flag="🇬🇧" />
+            <LanguageCard language="French" level="B2" flag="🇫🇷" />
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
 
-### Front-end
-![React](https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Angular](https://img.shields.io/badge/-Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/-Tailwind%20CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![Bootstrap](https://img.shields.io/badge/-Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
+const SocialButton = ({ Icon, href }) => (
+  <a
+    href={href}
+    className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-300"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Icon className="w-6 h-6 text-gray-700" />
+  </a>
+);
 
-### Back-end
-![FastAPI](https://img.shields.io/badge/-FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-![Spring](https://img.shields.io/badge/-Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
-![Laravel](https://img.shields.io/badge/-Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+const SkillBadge = ({ name }) => (
+  <div className="bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-100 transition-colors duration-300">
+    {name}
+  </div>
+);
 
-### Databases
-![MySQL](https://img.shields.io/badge/-MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-![SQL Server](https://img.shields.io/badge/-SQL%20Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
+const SpecializationCard = ({ title, description }) => (
+  <div className="bg-gray-50 p-4 rounded-lg hover:shadow-md transition-shadow duration-300">
+    <h3 className="font-semibold text-lg mb-2">{title}</h3>
+    <p className="text-gray-600">{description}</p>
+  </div>
+);
 
-### Tools & Others
-![Git](https://img.shields.io/badge/-Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-![Figma](https://img.shields.io/badge/-Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
-![Jira](https://img.shields.io/badge/-Jira-0052CC?style=for-the-badge&logo=jira&logoColor=white)
+const LanguageCard = ({ language, level, flag }) => (
+  <div className="bg-gray-50 p-4 rounded-lg text-center hover:shadow-md transition-shadow duration-300">
+    <span className="text-2xl mb-2">{flag}</span>
+    <h3 className="font-semibold">{language}</h3>
+    <p className="text-gray-600">{level}</p>
+  </div>
+);
 
-</div>
-
-
-
-
-## 🌱 Currently Learning
-
-- Microservices architecture
-- AI and Machine Learning integration in web applications
-
-
-
-## 🌍 Languages
-
-- 🇲🇦 Arabic: Native
-- 🇬🇧 English: Fluent (B1)
-- 🇫🇷 French: Intermediate (B2)
-
-## 📫 Let's Connect!
-
-I'm always open to interesting conversations and collaboration opportunities. Feel free to reach out!
-
-- 📧 Email: Belyamaneayoub1@gmail.com
-- 📱 Phone: (+212) 623-455637
-- 💼 LinkedIn: [Belyamane Ayoub](https://www.linkedin.com/in/belyamane-ayoub)
-- 🐙 GitHub: [cajty](https://github.com/cajty)
-
----
-
-<div align="center">
-  <img src="https://komarev.com/ghpvc/?username=cajty&color=0969DA&style=flat-square&label=Profile+Views" alt="Profile views" />
-</div>
-
-<div align="center">
-  <i>⭐️ From [Ayoub Belyamane](https://github.com/cajty)</i>
-</div>
-
-
+export default DeveloperProfile;
