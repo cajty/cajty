@@ -47,42 +47,15 @@ I'm a passionate Full Stack Developer based in Salé, Morocco, currently enhanci
 
 </div>
 
-## 🏆 Projects
 
-### BANKING-E
-A REST API for secure bank account management
-- **Tech Stack:** Spring Boot, Liquibase, ElasticSearch, Lombok
-- **GitHub:** [YouConnecte](https://github.com/salekelfahim/YouConnecte/tree/f-publication)
 
-### TECHNOVA
-An automated user management system
-- **Tech Stack:** Spring Framework, Spring MVC, Spring Data JPA, XML Configuration
-- **GitHub:** [TECHNOVA](https://github.com/cajty/technova)
-
-### AI Chatbot
-An AI-powered chatbot for quick employee responses
-- **Tech Stack:** Electron, FastAPI, Ollama (mistral-nemo), LangChain, SQL, ChromaDB
-- **GitHub:** [AI Chatbot](https://github.com/cajty)
-
-## 📊 GitHub Stats
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=cajty&show_icons=true&count_private=true&hide_border=true&title_color=0969DA&icon_color=0969DA&text_color=0969DA&bg_color=ffffff" alt="Ayoub's GitHub stats" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=cajty&hide_border=true&currStreakNum=0969DA&sideNums=0969DA&currStreakLabel=0969DA&sideLabels=0969DA&dates=0969DA" alt="Ayoub's GitHub Streak" />
-</div>
 
 ## 🌱 Currently Learning
 
-- Advanced React patterns and performance optimization
 - Microservices architecture
-- Cloud computing (AWS)
 - AI and Machine Learning integration in web applications
 
-## 🎓 Education
 
-- **Full Stack Development** - YouCode | UM6P, Youssoufia (2023 - Present)
-- **Sciences de la Matière Physique** - Faculté des Sciences de Rabat (2019 - 2021)
-- **Baccalauréat en Sciences Physiques** - Lycée Allal Al Fassi, Sala Al Jadida (2018 - 2019)
 
 ## 🌍 Languages
 
