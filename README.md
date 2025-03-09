@@ -8,7 +8,7 @@
   
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=for-the-badge&logo=github)](https://github.com/cajty)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/ayoub-belyamane-bb28742a7/)
-[![Portfolio](https://img.shields.io/badge/Portfolio-View-FF7139?style=for-the-badge&logo=firefox-browser)](https://github.com/cajty)
+[![Portfolio](https://img.shields.io/badge/Portfolio-View-FF7139?style=for-the-badge&logo=firefox-browser)](https://belyamaneayoub.vercel.app/)
 
 </div>
 
@@ -48,6 +48,7 @@ const developer = {
 ### Database Management
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white)
+![Oracle](https://img.shields.io/badge/Oracle-F80000?style=flat-square&logo=oracle&logoColor=white)
 
 </div>
 
